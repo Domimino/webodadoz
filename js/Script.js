@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    
+
     // Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.aktuality .slide');
@@ -53,5 +55,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.href = 'index.html#contact';
             }
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
+
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
+});
+
+const hamburger = document.querySelector('.hamburger-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+});
+
+const menuButton = document.querySelector('.menu-button');
+const submenu = document.querySelector('.submenu');
+
+menuButton.addEventListener('click', () => {
+  submenu.classList.toggle('open');
+});
+
+const navIcon = document.getElementById('nav-icon');
+const navContent = document.getElementById('nav-content');
+
+navIcon.addEventListener('click', function() {
+    navContent.querySelector('ul').classList.toggle('show');
+});
+
+const toggleButtons = document.querySelectorAll('.toggle-button');
+
+toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const hiddenContent = button.nextElementSibling;
+        hiddenContent.classList.toggle('show');
+        button.textContent = hiddenContent.classList.contains('show') ? 'Méně o mně' : 'Více o mně'; // Změna textu tlačítka
     });
 });
