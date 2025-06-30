@@ -1,100 +1,146 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přihlášky - ODADOZ</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Odadoz Web</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
-    <div class="nav-container">
-        <nav>
+    <!-- Navigace -->
+    <header>
+        <nav class="nav-grid">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo" width="auto" height="auto%"></a>
+                <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo"></a>
             </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-label">
-                <img src="images/navicon.png" alt="Rozbalit navigaci">
-            </label>
-            <div class="menu" id="menu">
-                <ul> 
-                    <li><a href="nabidka.html">Nabídka &#9662;</a>
-                    <ul class="dropdown">
-                        <li><a href="pripravka.html">Všestranná pohybová přípravka</a></li>
-                        <li><a href="#">Všestranná pohybovka pokročilí</a></li>
-                        <li><a href="#">Buď Fit - Cvičení pro dospělé</a></li>
-                    </ul>
+            <div class="nav-menu">
+                <div id="hamburger" class="hamburger">&#9776;</div>
+                    <ul id="menu" class="menu">
+                    <li><a href="nabidka.html">NABÍDKA &#9662;</a>
+                        <ul class="dropdown">
+                            <li><a href="pripravka.html">VŠESTRANNÁ POHYBOVÁ PŘÍPRAVA</a></li>
+                            <li><a href="#">VŠESTRANNÁ POHYBOVKA POKROČILÍ</a></li>
+                            <li><a href="#">BUĎ FIT - CVIČENÍ PRO DOSPĚLÉ</a></li>
+                        </ul>
                     </li>
-                    <li><a href="aktuality.html">Aktuality</a></li>
-                    <li><a href="o-nas.html">O Nás</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                    <li><a href="dokumenty.html">Dokumenty</a></li>
-                    <li><a href="prihlasky.html">Přihlášky</a></li>
+                    <li><a href="aktuality.html">AKTUALITY</a></li>
+                    <li><a href="o-nas.html">O NÁS</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
+                    <li><a href="dokumenty.html">DOKUMENTY</a></li>
+                    <li><a href="pronajem.html">PŮJČTE SI</a></li>
+                    <li><a href="prihlasky.html">PŘIHLÁŠKY</a></li>
                 </ul>
             </div>
         </nav>
-    </div>    
+
+        <div class="header">
+            <div class="header-content">
+                <h1>ODADOZ Z.S.</h1>
+                <h1>POHYB PRO MALÉ I VELKÉ JIŽ OD 2 LET</h1>
+                <div class="center-container">
+                    <a href="nabidka.html" class="center-button">NABÍDKA</a>
+                </div>    
+            </div>
+        </div>
+        
+    </header>
 
     <main>
         <section class="section">
             <h2>Přihlášky</h2>
             <h2>Vyberte si to pravé pro vás:</h2>
-            <ul>
+            <ul><center>
                 <li><a href="https://docs.google.com/forms/d/1PpM57yftFzMVXr1pL_T2Dz3hNfKbpRG7g_Lrh-qRiAA/edit" target="_blank">Zájmové útvary</a></li>
                 <li><a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank">Letní příměstský tábor I</a></li>
                 <li><a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank">Letní příměstský tábor II</a></li>
-            </ul>
+            </ul></center>
         </section>
     </main>
 
-    <section class="section">
+     <!-- Sekce PODPORUJÍ NÁS -->
+     <!-- Slider -->
+     <section id="slider">
+        <h2>PODPORUJÍ NÁS</h2>
+        <center><div class="social-links">
+            <a href="" target="_blank"><img src="images/kubensky.png" width="10%" height="10%" alt="F"></a>
+            <a href="" target="_blank"><img src="images/konopnytata.png" width="10%" height="10%" alt="Y"></a>
+            <a href="" target="_blank"><img src="images/aga.png" width="10%" height="10%" alt="I"></a>
+            <a href="" target="_blank"><img src="images/acsteel.png" width="10%" height="10%" alt="I"></a>
+            <a href="" target="_blank"><img src="images/terlicko.png" width="10%" height="10%" alt="I"></a>
+        
+        </div></center>
+        
+    </section>
+
+    
+
+    <!-- Kontakt -->
+    <section id="contact">
+    
         <div id="contact">
-            <h2>Kontakt</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="images/tel.png" alt="Telefon">
+                <h2>KONTAKT</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="images/tel.png" alt="Telefon">
+                        </div>
+                        <p>+420 739 950 965</p>
                     </div>
-                    <p>+420 739 950 965</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="images/mail.png" alt="Email">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="images/mail.png" alt="Email">
+                        </div>
+                        <p>ODADOZ@OUTLOOK.CZ</p>
                     </div>
-                    <p>odadoz@outlook.cz</p>
                 </div>
-            </div>
-            <div class="ico">
-                <center><p>IČO: 21618101</p></center>
-            </div>
-            <div class="join-us">
-                <h2>Přidej se k nám!</h2>
-                <div class="center-button">
-                    <a href="prihlasky.html" class="btn btn-primary">Přihlášky</a>
+                <div class="ico">
+                    <center><p>IČO: 21618101</p></center>
                 </div>
+                
+                <h2>PŘIDEJ SE K NÁM!</h2>
+                <div class="center-container">
+                    <a href="prihlasky.html" class="center-button">PŘIHLÁŠKY</a>
+                </div>
+
+                <h2>Kontaktujte nás</h2>
+
+                <h2>A NEBO NÁM NAPIŠTE ROVNOU TADY :)</h2>
+        <form action="https://formspree.io/f/xanqweae" method="post"  class="contact-form">
+  <label for="name">Jméno a Příjmení:</label>
+  <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" name="email" placeholder="Váš e-mail" required>
+
+  <label for="phone">Telefon:</label>
+  <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
+
+  <label for="message">Zpráva:</label>
+  <textarea id="message" name="message" placeholder="Vaše zpráva: Dobrý den, rád bych poprosil o zaslání přihlášky, pro všestrannou pohybovou přípravku. Díky s pozdravem Novotný." required></textarea>
+
+  <button type="submit">Odeslat</button>
+</form>
+                
             </div>
-        </div>
     </section>
 
     <footer>
-        <div class="logo">
+        <div class="footer">
             <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo" width="10%" height="10%">
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61558994196985" target="_blank"><img src="images/facebook.png.png" width="5%" height="5%" alt="Facebook"></a>
                     <a href="https://www.youtube.com/@odadoz_cz" target="_blank"><img src="images/youtube.png" width="5%" height="5%" alt="YouTube"></a>
                     <a href="https://www.instagram.com/odadoz_cz/profilecard/?igsh=NzBqcmVxbTBtcHk0" target="_blank"><img src="images/instagram.png" width="5%" height="5%" alt="Instagram"></a>
                 </div>
-                <div class="copyright">
-                    <p>Copyright ODADOZ Z.S. 2023</p>
-                </div>
+                
+            </a>   
+            
+                
         </div>
-
+        <p>&copy; 2023 ODADOZ. All rights reserved.</p> 
     </footer>
-
+    
 </body>
-
 </html>

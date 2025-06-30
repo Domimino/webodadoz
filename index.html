@@ -1,165 +1,161 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ODADOZ - Domovská stránka</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Odadoz Web</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
-    <div class="nav-container">
-        <nav>
+    <!-- Navigace -->
+    <header>
+        <nav class="nav-grid">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo" width="auto" height="auto"></a>
+                <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo"></a>
             </div>
-
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-label">
-                <img src="images/navicon.png" alt="Rozbalit navigaci">
-            </label>
-
-            <div class="menu" id="menu">
-                <ul>
-                    <li><a href="nabidka.html">Nabídka &#9662;</a>
+            <div class="nav-menu">
+                <div id="hamburger" class="hamburger">&#9776;</div>
+                    <ul id="menu" class="menu">
+                    <li><a href="nabidka.html">NABÍDKA &#9662;</a>
                         <ul class="dropdown">
-                            <li><a href="pripravka.html">Všestranná pohybová přípravka</a></li>
-                            <li><a href="#">Všestranná pohybovka pokročilí</a></li>
-                            <li><a href="#">Buď Fit - Cvičení pro dospělé</a></li>
+                            <li><a href="pripravka.html">VŠESTRANNÁ POHYBOVÁ PŘÍPRAVA</a></li>
+                            <li><a href="#">VŠESTRANNÁ POHYBOVKA POKROČILÍ</a></li>
+                            <li><a href="#">BUĎ FIT - CVIČENÍ PRO DOSPĚLÉ</a></li>
                         </ul>
                     </li>
-                    <li><a href="aktuality.html">Aktuality</a></li>
-                    <li><a href="o-nas.html">O Nás</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                    <li><a href="dokumenty.html">Dokumenty</a></li>
-                    <li><a href="prihlasky.html">Přihlášky</a></li>
+                    <li><a href="aktuality.html">AKTUALITY</a></li>
+                    <li><a href="o-nas.html">O NÁS</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
+                    <li><a href="dokumenty.html">DOKUMENTY</a></li>
+                    <li><a href="pronajem.html">PŮJČTE SI</a></li>
+                    <li><a href="prihlasky.html">PŘIHLÁŠKY</a></li>
                 </ul>
             </div>
         </nav>
-    </div>
 
-    <header class="header">
-        <div class="header-content">
-            <h1>ODADOZ Z.S.</h1>
-            <div class="center-button"> <a href="nabidka.html" class="btn btn-primary">Nabídka</a> </div>
+        <div class="header">
+            <div class="header-content">
+                <h1>ODADOZ Z.S.</h1>
+                <h1>POHYB PRO MALÉ I VELKÉ JIŽ OD 2 LET</h1>
+                <div class="center-container">
+                    <a href="nabidka.html" class="center-button">NABÍDKA</a>
+                </div>    
+            </div>
         </div>
+        
     </header>
 
-    <main>
-        <section class="section">
-            <div class="aktuality">
-                <h2>Aktuality</h2>
-                <div class="slider">
-                    <div class="slides-container" id="slides-container">
-                        <div class="slide">
-                            <img src="images/plakat.png" width="30%" height="auto" alt="Zájmové útvary">
-                            <p>Zájmové útvary</p>
-                            <div class="center-button"> <a href="aktuality.html" class="btn btn-primary">Zjistěte více</a> </div>
-                        </div>
-                        <div class="slide">
-                            <img src="images/bud fit.png" width="30%" height="auto" alt="Cvičení pro dospělé">
-                            <p>Cvičení pro dospělé</p>
-                            <div class="center-button"> <a href="aktuality.html" class="btn btn-primary">Zjistěte více</a> </div>
-                        </div>
-                        <div class="slide">
-                            <img src="images/tabory.jpg" width="50%" height="auto" alt="Letní příměstské tábory">
-                            <p>Letní příměstské tábory - připravujeme</p>
-                            <div class="center-button"> <a href="aktuality.html" class="btn btn-primary">Zjistěte více</a> </div>
-                        </div>
-                        <div class="slide">
-                            <img src="images/pridejseknam.png" width="50%" height="auto" alt="Zážitkové akce">
-                            <p>Zážitkové akce na míru</p>
-                            <div class="center-button"> <a href="aktuality.html" class="btn btn-primary">Zjistěte více</a> </div>
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button id="prev" class="slider-btn">❮</button>
-                        <button id="next" class="slider-btn">❯</button>
-                    </div>
+
+    <!-- Slider -->
+    <section id="slider">
+        <h2>AKTUALITY</h2>
+        <div id="slides-container" class="slides-container">
+            <div class="slide">
+                <img src="images/pridejseknam.png" width="30%" height="auto" alt="Zájmové útvary">
+                <p>ZÁJMOVÉ ÚTVARY</p>
+                <a href="aktuality.html" class="center-button">ZJISTI VÍCE</a>
+            </div>
+            <div class="slide">
+                <img src="images/bud fit.png" width="30%" height="auto" alt="Cvičení pro dospělé">
+                <p>CVIČENÍ PRO DOSPĚLÉ</p>
+                <a href="aktuality.html" class="center-button">ZJISTI VÍCE</a>
+            </div>
+            <div class="slide">
+                <img src="images/tabory.jpg" width="50%" height="auto" alt="Letní příměstské tábory">
+                <p>LETNÍ PŘÍMĚSTSKÉ TÁBORY - PŘIPRAVUJEME</p>
+                <a href="aktuality.html" class="center-button">ZJISTI VÍCE</a>
+            </div>
+            <div class="slide">
+                <img src="images/plakat.png" width="30%" height="auto" alt="Zážitkové akce">
+                <p>ZÁŽITKOVÉ AKCE NA MÍRU</p>
+                <a href="aktuality.html" class="center-button">ZJISTI VÍCE</a>
+            </div>
+        </div>
+        <button id="prev" class="slider-button">&#10094;</button>
+        <button id="next" class="slider-button">&#10095;</button>
+    </section>
+
+ <!-- O nás -->
+    <section class="about-us">
+    <div class="about-us-container">
+        <div class="about-us-grid">
+            <div class="about-us-image">
+                <div class="image-frame">
+                    <img src="images/Dominik a Zuzana.jpg" alt="Dominik a Zuzana">
                 </div>
             </div>
-        </section>
-
-        <section class="section">
-            <div class="about-us-grid">
-                <div class="about-us-image">
-                    <img src="images/Dominik a Zuzana.jpg" width="100%" height="auto" alt="Dominik a Zuzana">
-                </div>
-                <div class="about-us-content">
-                    <h2>O NÁS</h2>
-                    <p>Jsme Zuzana a Dominik Pospíšilovi – absolventi FTK UP v Olomouci oboru Rekreologie, manželé a rodiče dvou neposedných dětí. Jako rodiče a nadšenci do pohybu a dobrodružství si uvědomujeme, že aktivní životní styl je klíčem k radosti, zdraví a spokojenosti nejen dětí, ale i mládeže, dospělých a celých rodin. Proto jsme založili spolek, jehož cílem je podporovat všestranný rozvoj, pomáhat objevovat radost z pohybu a smysluplně naplňovat volný čas. Ať už jde o volnočasové aktivity, příměstské tábory nebo jiné kulturní a společenské akce, vždy se snažíme, aby vše bylo především zábavné, zážitkové a přinášelo pozitivní energii všem zúčastněným. Jako milující rodiče se snažíme o přirozený pohyb a o individuální a respektující přístup nejen k dětem.</p>
+            <div class="about-us-content">
+                <h2>O NÁS</h2>
+                <img src="images/wave-line.svg" class="wave-line" alt="Wave Line">
+                <p>Jsme Zuzana a Dominik Pospíšilovi – absolventi FTK UP v Olomouci oboru Rekreologie, manželé a rodiče dvou neposedných dětí. Jako rodiče a nadšenci do pohybu a dobrodružství si uvědomujeme, že aktivní životní styl je klíčem k radosti, zdraví a spokojenosti nejen dětí, ale i mládeže, dospělých a celých rodin. Proto jsme založili spolek, jehož cílem je podporovat všestranný rozvoj, pomáhat objevovat radost z pohybu a smysluplně naplňovat volný čas. Ať už jde o volnočasové aktivity, příměstské tábory nebo jiné kulturní a společenské akce, vždy se snažíme, aby vše bylo především zábavné, zážitkové a přinášelo pozitivní energii všem zúčastněným. Jako milující rodiče se snažíme o přirozený pohyb a o individuální a respektující přístup nejen k dětem.</p>
+                
+                <div class="hidden-text" style="display: none;">
                     <h2>NAŠE ZKUŠENOSTI A VZDĚLÁNÍ</h2>
-                    <p>V rámci studia na FTK UP jsme sbírali zkušenosti nejen v Česku, ale i v zahraničí. Studovali jsme v Linköpingu ve Švédsku obor Nordic Culture and Outdoor Education, kde jsme čerpali inspiraci pro realizaci naší činnosti z filozofického směru Friluftsliv, což v překladu znamená volný život v přírodě. Další cenné zkušenosti jsme získali na Faculty of Kinesiology v chorvatském Splitu, kde jsme se věnovali široké škále sportů – od gymnastiky, vodních sportů a míčových her až po bojová umění a další outdoorové aktivity. Tato zkušenost nám poskytla jedinečný pohled na pohyb ve všech jeho podobách. Působili jsme také jako stážisté v chorvatském gymnastickém klubu, kde jsme získali cennou praxi a inspiraci pro další činnost našeho spolku. V současnosti si vzdělání rozšiřujeme na FTK UP v oboru Aplikované pohybové aktivity a poradenství ve speciální pedagogice.</p>
-                    
+                    <p>V rámci studia na FTK UP jsme sbírali zkušenosti nejen v Česku, ale i v zahraničí.</p>
+                    <p>Studovali jsme v Linköpingu ve Švédsku obor Nordic Culture and Outdoor Education, kde jsme čerpali inspiraci pro realizaci naší činnosti z filozofického směru Friluftsliv, což v překladu znamená volný život v přírodě. Další cenné zkušenosti jsme získali na Faculty of Kinesiology v chorvatském Splitu, kde jsme se věnovali široké škále sportů – od gymnastiky, vodních sportů a míčových her až po bojová umění a další outdoorové aktivity. Tato zkušenost nám poskytla jedinečný pohled na pohyb ve všech jeho podobách. Působili jsme také jako stážisté v chorvatském gymnastickém klubu, kde jsme získali cennou praxi a inspiraci pro další činnost našeho spolku. V současnosti si vzdělání rozšiřujeme na FTK UP v oboru Aplikované pohybové aktivity a poradenství ve speciální pedagogice.</p>
+                </div>
+                
+                <div class="button-container">
+                    <button class="btn-show-more" onclick="toggleText()">ZJISTI VÍCE</button>
                 </div>
             </div>
-            <div><H2>NAŠI TRENÉŘI</H2></div>
-                <div class=".hidden-content hidden">
-                    <div class="trainers-grid">
-                        <div class="trainer-profile">
-                            <img src="images/Dominik.jpg" alt="Dominik">
-                            <div class="trainer-description">
-                                <h3>Dominik</h3>
-                                <p>Dominik je absolventem FTK UP oboru Rekreologie. Je dobrodruhem tělem i duší, který miluje přírodu. Má dlouholeté zkušenosti s vytvářením zážitkových volnočasových programů pro děti i dospělé. Je také technicky zručný ve všem, co dělá – ať už jde o programování nebo jakékoli řemeslo, vždy si poradí a řád předá své zkušenosti dál. V minulosti se věnoval profesionálně karate, kde i dlouhá léta působil jako trenér. Díky své všestrannosti a pozitivnímu přístupu přináší do našich programů jedinečnou energii. </p>
-                            </div>
-                        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    
+    <section>
+        <div class="trainers">
+            <h2>NAŠI TRENÉŘI</h2>
+            <div class="trainers-grid">
+                <div class="trainer-profile">
+                    <div class="image image-frame">
+                        <img src="images/Dominik.jpg" alt="Dominik">
                     </div>
-                    <div class="trainer-profile">
+                    <div class="trainer-description">
+                     <h3>DOMINIK</h3>
+                     <p>Dominik je absolventem FTK UP oboru Rekreologie. Je dobrodruhem tělem i duší, který miluje přírodu. Má dlouholeté zkušenosti s vytvářením zážitkových volnočasových programů pro děti i dospělé. Je také technicky zručný ve všem, co dělá – ať už jde o programování nebo jakékoli řemeslo, vždy si poradí a řád předá své zkušenosti dál. V minulosti se věnoval profesionálně karate, kde i dlouhá léta působil jako trenér. Díky své všestrannosti a pozitivnímu přístupu přináší do našich programů jedinečnou energii. </p>
+                    </div>
+                </div>
+                <div class="trainer-profile">
+                    <div class="image image-frame">
                         <img src="images/Zuzana.jpg" alt="Zuzana">
-                        <div class="trainer-description">
-                            <h3>Zuzana</h3>
-                            <p>Zuzana je absolventka FTK UP v Olomouci oboru Rekreologie. Má dlouholeté zkušenosti s organizací volnočasových aktivit pro děti i dospělé. V minulosti se věnovala mažoretkovému sportu, kdy se svými svěřenci dosáhla mnoha úspěchů na mezinárodních soutěžích, včetně účasti na mistrovství světa. S nadšením se věnuje všestrannému rozvoji dětí, a to především hravě a zábavně. </p>
-                        </div>
+                    </div>
+                    <div class="trainer-description">
+                        <h3>ZUZANA</h3>
+                        <p>Zuzana je absolventka FTK UP v Olomouci oboru Rekreologie. Má dlouholeté zkušenosti s organizací volnočasových aktivit pro děti i dospělé. V minulosti se věnovala mažoretkovému sportu, kdy se svými svěřenci dosáhla mnoha úspěchů na mezinárodních soutěžích, včetně účasti na mistrovství světa. S nadšením se věnuje všestrannému rozvoji dětí, a to především hravě a zábavně. </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <div class="aktuality">
-                <h2>Naši Partneři</h2>
-                <div class="slider">
-                    <div class="slides-container" id="slides-container">
-                        <div class="slide">
-                            <img src="images/kubensky.jpg" width="30%" height="auto" alt="Zájmové útvary">
-                            <p>Bio farma Kuběnský</p>
-                            
-                        </div>
-                        <div class="slide">
-                            <img src="images/konopnytata.png" width="20%" height="auto" alt="Cvičení pro dospělé">
-                            <p>Konopný Táta</p>
-                            
-                        </div>
-                        <div class="slide">
-                            <img src="images/acsteel.png" width="30%" height="auto" alt="Letní příměstské tábory">
-                            <p>AC Steel</p>
-                            
-                        </div>
-                        <div class="slide">
-                            <img src="images/aga.png" width="25%" height="auto" alt="Zážitkové akce">
-                            <p>AGA 24</p>
-                            
-                        </div>
-                        <div class="slide">
-                            <img src="images/silesiacargo.jpg" width="50%" height="auto" alt="Zážitkové akce">
-                            <p>Silesia cargo</p>
-                            
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button id="prev" class="slider-btn">❮</button>
-                        <button id="next" class="slider-btn">❯</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Sekce PODPORUJÍ NÁS -->
+     <!-- Slider -->
+     <section id="slider">
+        <h2>PODPORUJÍ NÁS</h2>
+        <center><div class="social-links">
+            <a href="" target="_blank"><img src="images/kubensky.png" width="10%" height="10%" alt="F"></a>
+            <a href="" target="_blank"><img src="images/konopnytata.png" width="10%" height="10%" alt="Y"></a>
+            <a href="" target="_blank"><img src="images/aga.png" width="10%" height="10%" alt="I"></a>
+            <a href="" target="_blank"><img src="images/acsteel.png" width="10%" height="10%" alt="I"></a>
+            <a href="" target="_blank"><img src="images/terlicko.png" width="10%" height="10%" alt="I"></a>
+        
+        </div></center>
+        
+    </section>
 
-        <section class="section">
-            <div id="contact">
-                <h2>Kontakt</h2>
+    
+
+    <!-- Kontakt -->
+    <section id="contact">
+    
+        <div id="contact">
+                <h2>KONTAKT</h2>
                 <div class="contact-grid">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -171,36 +167,55 @@
                         <div class="contact-icon">
                             <img src="images/mail.png" alt="Email">
                         </div>
-                        <p>odadoz@outlook.cz</p>
+                        <p>ODADOZ@OUTLOOK.CZ</p>
                     </div>
                 </div>
                 <div class="ico">
                     <center><p>IČO: 21618101</p></center>
                 </div>
-                <div class="join-us">
-                    <h2>Přidej se k nám!</h2>
-                    <div class="center-button">
-                        <a href="prihlasky.html" class="btn btn-primary">Přihlášky</a>
-                    </div>
+                
+                <h2>PŘIDEJ SE K NÁM!</h2>
+                <div class="center-container">
+                    <a href="prihlasky.html" class="center-button">PŘIHLÁŠKY</a>
                 </div>
+
+                <h2>Kontaktujte nás</h2>
+
+                <h2>A NEBO NÁM NAPIŠTE ROVNOU TADY :)</h2>
+        <form action="https://formspree.io/f/xanqweae" method="post"  class="contact-form">
+  <label for="name">Jméno a Příjmení:</label>
+  <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" name="email" placeholder="Váš e-mail" required>
+
+  <label for="phone">Telefon:</label>
+  <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
+
+  <label for="message">Zpráva:</label>
+  <textarea id="message" name="message" placeholder="Vaše zpráva: Dobrý den, rád bych poprosil o zaslání přihlášky, pro všestrannou pohybovou přípravku. Díky s pozdravem Novotný." required></textarea>
+
+  <button type="submit">Odeslat</button>
+</form>
+                
             </div>
-        </section>
+    </section>
 
     <footer>
-        <div class="logo">
+        <div class="footer">
             <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo" width="10%" height="10%">
                 <div class="social-links">
                     <a href="https://www.facebook.com/profile.php?id=61558994196985" target="_blank"><img src="images/facebook.png.png" width="5%" height="5%" alt="Facebook"></a>
                     <a href="https://www.youtube.com/@odadoz_cz" target="_blank"><img src="images/youtube.png" width="5%" height="5%" alt="YouTube"></a>
                     <a href="https://www.instagram.com/odadoz_cz/profilecard/?igsh=NzBqcmVxbTBtcHk0" target="_blank"><img src="images/instagram.png" width="5%" height="5%" alt="Instagram"></a>
                 </div>
-                <div class="copyright">
-                    <p>Copyright ODADOZ Z.S. 2023</p>
-                </div>
+                
+            </a>   
+            
+                
         </div>
-
+        <p>&copy; 2023 ODADOZ. All rights reserved.</p> 
     </footer>
-
+    
 </body>
-
 </html>

@@ -1,115 +1,120 @@
 document.addEventListener("DOMContentLoaded", () => {
- // Smooth scroll for contact links
- const contactLinks = document.querySelectorAll('a[href="#contact"]');
- contactLinks.forEach(link => {
-     link.addEventListener('click', function(event) {
-         event.preventDefault();
-         const contactSection = document.getElementById('contact');
-         if (contactSection) {
-             contactSection.scrollIntoView({ behavior: 'smooth' });
-         }
-     });
- });
+    // Smooth scroll for contact links
+    document.querySelectorAll('a[href="#contact"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
 
-
-    // Automatické přehrávání slideru a ovládání tlačítky
+    // Slider
     const slidesContainer = document.getElementById('slides-container');
     const slides = document.querySelectorAll('.slide');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
     let currentSlide = 0;
-    let autoPlayInterval; // Proměnná pro interval automatického přehrávání
+    let autoPlayInterval;
 
     if (slidesContainer && slides.length > 0 && prevButton && nextButton) {
-        function showSlide(n) {
-            slides[currentSlide].style.display = 'none';
+        const showSlide = (n) => {
+            slides.forEach(slide => slide.style.display = 'none');
             slides[n].style.display = 'block';
             currentSlide = n;
-        }
+        };
 
-        function nextSlide() {
-            let next = (currentSlide + 1) % slides.length;
-            showSlide(next);
-        }
+        const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
+        const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
 
-        function prevSlide() {
-            let prev = (currentSlide - 1 + slides.length) % slides.length; // Zajištění správného indexu i pro předchozí
-            showSlide(prev);
-        }
-
-        showSlide(0); // Zobrazíme první slide na začátku
-
-        // Spuštění automatického přehrávání
+        showSlide(0);
         autoPlayInterval = setInterval(nextSlide, 3000);
 
-        // Obsluha tlačítek
-        nextButton.addEventListener('click', () => {
-            clearInterval(autoPlayInterval); // Zrušíme automatické přehrávání po kliknutí
-            nextSlide();
-            autoPlayInterval = setInterval(nextSlide, 3000); // Znovu spustíme automatické přehrávání
-        });
-
-        prevButton.addEventListener('click', () => {
-            clearInterval(autoPlayInterval); // Zrušíme automatické přehrávání po kliknutí
-            prevSlide();
-            autoPlayInterval = setInterval(nextSlide, 3000); // Znovu spustíme automatické přehrávání
-        });
-    }
-});
-
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
-
-hamburger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-    hamburger.classList.toggle("active");
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-
-    menuToggle.addEventListener("click", () => {
-        menu.querySelector("ul").classList.toggle("active");
-    });
-});
-
-// Dropdown functionality
-const dropdownLinks = document.querySelectorAll(".menu ul li a");
-        dropdownLinks.forEach(link => {
-            link.addEventListener("click", (e) => {
-                const dropdown = link.nextElementSibling;
-                if (dropdown && dropdown.classList.contains("dropdown")) {
-                    e.preventDefault();
-                    dropdown.classList.toggle("open");
-                }
+        [prevButton, nextButton].forEach((button, index) => {
+            button.addEventListener('click', () => {
+                clearInterval(autoPlayInterval);
+                index === 0 ? prevSlide() : nextSlide();
+                autoPlayInterval = setInterval(nextSlide, 3000);
             });
         });
+    }
 
-// Close menu on outside click
-document.addEventListener("click", (e) => {
-    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-        menu.classList.remove("active");
-        const dropdowns = document.querySelectorAll(".dropdown");
-        dropdowns.forEach(dropdown => dropdown.classList.remove("open"));
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.querySelector('.menu');
+    if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+    }
+
+    // Dropdown menu for mobile
+    document.querySelectorAll('.menu > li').forEach(menuItem => {
+        menuItem.addEventListener('click', () => {
+            menuItem.classList.toggle('clicked');
+        });
+    });
+
+    // Toggle hidden text
+    document.querySelectorAll("#toggle-button").forEach(button => {
+        button.addEventListener("click", function () {
+            const hiddenText = this.nextElementSibling;
+            if (hiddenText) {
+                hiddenText.classList.toggle("active");
+                this.textContent = hiddenText.classList.contains("active") ? "ZOBRAZIT MÉNĚ" : "ZJISTI VÍCE";
+            }
+        });
+    });
+});
+
+function toggleText() {
+    var textElements = document.querySelectorAll('.hidden-text');
+    textElements.forEach(function(element) {
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    });
+
+    var button = document.querySelector('.btn-show-more');
+    if (button.innerHTML === "Zjisti více") {
+        button.innerHTML = "ZJISTI VÍCE / SKRÝT";
+    } else {
+        button.innerHTML = "ZJISTI VÍCE / SKRÝT";
+    }
+}
+
+const form = document.querySelector('.contact-form');
+
+form.addEventListener('submit', function(event) {
+    let isValid = true;
+
+    // Validace jména
+    const nameInput = document.getElementById('name');
+    if (nameInput.value.trim() === '') {
+        isValid = false;
+        alert('Prosím vyplňte jméno.');
+        nameInput.focus();
+    }
+
+    // Validace e-mailu (jednoduchá kontrola formátu)
+    const emailInput = document.getElementById('email');
+    if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        isValid = false;
+        alert('Prosím vyplňte platný e-mail.');
+        emailInput.focus();
+    }
+
+    // Validace zprávy
+    const messageInput = document.getElementById('message');
+    if (messageInput.value.trim() === '') {
+        isValid = false;
+        alert('Prosím vyplňte zprávu.');
+        messageInput.focus();
+    }
+
+    if (!isValid) {
+        event.preventDefault(); // Zabrání odeslání formuláře, pokud validace selže
     }
 });
 
- // Auto-close dropdowns on smaller screens
- const dropdowns = document.querySelectorAll(".dropdown");
- document.addEventListener("click", (e) => {
-     dropdowns.forEach(dropdown => {
-         if (!dropdown.contains(e.target)) {
-             dropdown.classList.remove("open");
-         }
-     });
- });
-
- const menuButton = document.querySelector('.menu-button');
-    const submenu = document.querySelector('.submenu');
-
-    menuButton.addEventListener('click', () => {
-        menuButton.parentElement.classList.toggle('active'); // Přidáme třídu 'active' k rodiči <li>
-        submenu.classList.toggle('open');
-    });
