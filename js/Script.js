@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 hamburger.addEventListener('click', toggleMenu);
 hamburger.addEventListener('touchstart', toggleMenu);
+}
 
     // Dropdown menu for mobile
     document.querySelectorAll('.menu > li').forEach(menuItem => {
