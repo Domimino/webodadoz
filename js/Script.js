@@ -86,35 +86,35 @@ function toggleText() {
 
 const form = document.querySelector('.contact-form');
 
-form.addEventListener('submit', function(event) {
-    let isValid = true;
+if (form) {
+    form.addEventListener('submit', function(event) {
 
-    // Validace jména
-    const nameInput = document.getElementById('name');
-    if (nameInput.value.trim() === '') {
-        isValid = false;
-        alert('Prosím vyplňte jméno.');
-        nameInput.focus();
-    }
+        let isValid = true;
 
-    // Validace e-mailu (jednoduchá kontrola formátu)
-    const emailInput = document.getElementById('email');
-    if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-        isValid = false;
-        alert('Prosím vyplňte platný e-mail.');
-        emailInput.focus();
-    }
+        const nameInput = document.getElementById('name');
+        if (nameInput.value.trim() === '') {
+            isValid = false;
+            alert('Prosím vyplňte jméno.');
+            nameInput.focus();
+        }
 
-    // Validace zprávy
-    const messageInput = document.getElementById('message');
-    if (messageInput.value.trim() === '') {
-        isValid = false;
-        alert('Prosím vyplňte zprávu.');
-        messageInput.focus();
-    }
+        const emailInput = document.getElementById('email');
+        if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+            isValid = false;
+            alert('Prosím vyplňte platný e-mail.');
+            emailInput.focus();
+        }
 
-    if (!isValid) {
-        event.preventDefault(); // Zabrání odeslání formuláře, pokud validace selže
-    }
-});
+        const messageInput = document.getElementById('message');
+        if (messageInput.value.trim() === '') {
+            isValid = false;
+            alert('Prosím vyplňte zprávu.');
+            messageInput.focus();
+        }
 
+        if (!isValid) {
+            event.preventDefault();
+        }
+
+    });
+}
