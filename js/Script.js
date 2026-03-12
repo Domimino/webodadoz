@@ -58,7 +58,7 @@ hamburger.addEventListener('touchstart', toggleMenu);
     });
 
     // Toggle hidden text
-    document.querySelectorAll("#toggle-button").forEach(button => {
+    document.querySelectorAll(".toggle-button").forEach(button => {
         button.addEventListener("click", function () {
             const hiddenText = this.nextElementSibling;
             if (hiddenText) {
