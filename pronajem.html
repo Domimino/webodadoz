@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extra služby - ODADOZ</title>
+    <title>Přihlášky - ODADOZ</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
+
 <body>
     <!-- Navigace -->
     <header>
@@ -31,7 +33,7 @@
                     <li><a href="index.html#about-us">O NÁS</a></li>
                     <li><a href="pronajem.html">EXTRA SLUŽBY</a></li>
                     <li><a href="prihlasky.html">PŘIHLÁŠKY</a></li>
-                    <li><a href="index.html#contact">KONTAKT</a></li>
+                    <li><a href="#contact">KONTAKT</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,7 +41,7 @@
         <div class="header">
             <div class="header-content">
                 <h1></h1>
-                <h1>EXTRA SLUŽBY</h1>
+                <h1>PŘIHLÁŠKY</h1>
                 <div class="center-container">
                     <a href="index.html" class="center-button">ÚVODNÍ STRÁNKA</a>
                 </div>    
@@ -47,13 +49,47 @@
         </div>
     </header>
 
+
     <main>
         <section class="section">
-            <div style="max-width: 900px; margin: 0 auto; padding: 20px; text-align: center;">
-                <h2>PŮJČTE SI / EXTRA SLUŽBY</h2>
-                <p style="margin-top: 15px; font-size: 16px; line-height: 1.6;">
-                    Zde najdete informace o možnostech pronájmu vybavení, prostor nebo dalších doplňkových službách, které náš spolek nabízí. V případě zájmu nás neváhejte kontaktovat.
-                </p>
+            <div style="max-width: 1000px; margin: 0 auto; padding: 20px; text-align: center;">
+                <h2>Vyberte si to pravé pro vás:</h2>
+                <p>Kliknutím na plakát nebo tlačítko přejdete přímo na online přihlášku.</p>
+                
+                <!-- Kontejner pro plakáty / karty přihlášek -->
+                <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
+                    
+                    <!-- 1. Karta: Zájmové útvary (Externí formulář - otevírá nové okno) -->
+                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
+                        <a href="https://docs.google.com/forms/d/1PpM57yftFzMVXr1pL_T2Dz3hNfKbpRG7g_Lrh-qRiAA/edit" target="_blank">
+                            <img src="images/krouzky.jpg" alt="Plakát Zájmové útvary" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
+                        </a>
+                        <h3 style="margin: 15px 0 10px;">Zájmové útvary</h3>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Přihlášení do našich kroužků a pohybových aktivit.</p>
+                        <a href="https://docs.google.com/forms/d/1PpM57yftFzMVXr1pL_T2Dz3hNfKbpRG7g_Lrh-qRiAA/edit" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Vyplnit přihlášku</a>
+                    </div>
+
+                    <!-- 2. Karta: Letní příměstské tábory (Externí formulář - otevírá nové okno) -->
+                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
+                        <a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank">
+                            <img src="images/tabory.jpg" alt="Plakát Letní příměstské tábory" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
+                        </a>
+                        <h3 style="margin: 15px 0 10px;">Letní příměstské tábory</h3>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Místo plné zábavy, her a pohybu o prázdninách.</p>
+                        <a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Vyplnit přihlášku</a>
+                    </div>
+
+                    <!-- 3. Karta: Závod Hradišťan (Externí web - otevírá nové okno) -->
+                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
+                        <a href="https://www.zavod-hradistan.cz/" target="_blank">
+                            <img src="images/hradistan.jpg" alt="Plakát Závod Hradišťan" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
+                        </a>
+                        <h3 style="margin: 15px 0 10px;">Závod Hradišťan</h3>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Tradiční závod. Více informací a registrace.</p>
+                        <a href="https://www.zavod-hradistan.cz/" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Přejít na web závodu</a>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
@@ -99,7 +135,7 @@
                 <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
 
                 <label for="message">Zpráva:</label>
-                <textarea id="message" name="message" placeholder="Vaše zpráva..." required></textarea>
+                <textarea id="message" name="message" placeholder="Vaše zpráva: Dobrý den, rád bych poprosil o zaslání přihlášky, pro všestrannou pohybovou přípravku. Díky s pozdravem Novotný." required></textarea>
 
                 <button type="submit" class="btn-submit">Odeslat</button>
             </form>
@@ -118,4 +154,5 @@
         </div>
     </footer>
 </body>
+
 </html>
