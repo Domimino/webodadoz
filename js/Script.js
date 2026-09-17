@@ -1,13 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scroll for contact links
-    document.querySelectorAll('a[href="#contact"]').forEach(link => {
+    // Smooth scroll pro odkazy s kotvou (např. kontakt)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', event => {
-            event.preventDefault();
-            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    event.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Pokud je otevřené mobilní menu, po kliknutí ho zavřeme
+                    const menu = document.querySelector('.menu');
+                    const hamburger = document.getElementById('hamburger');
+                    if (menu && menu.classList.contains('active')) {
+                        menu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            }
         });
     });
 
-    // Slider
+    // Slider / Aktuality
     const slidesContainer = document.getElementById('slides-container');
     const slides = document.querySelectorAll('.slide');
     const prevButton = document.getElementById('prev');
@@ -17,107 +31,103 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (slidesContainer && slides.length > 0 && prevButton && nextButton) {
         const showSlide = (n) => {
-            slides.forEach(slide => slide.style.display = 'none');
-            slides[n].style.display = 'block';
-            currentSlide = n;
+            currentSlide = (n + slides.length) % slides.length;
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
         };
 
-        const nextSlide = () => showSlide((currentSlide + 1) % slides.length);
-        const prevSlide = () => showSlide((currentSlide - 1 + slides.length) % slides.length);
+        const nextSlide = () => showSlide(currentSlide + 1);
+        const prevSlide = () => showSlide(currentSlide - 1);
 
-        showSlide(0);
-        autoPlayInterval = setInterval(nextSlide, 3000);
+        // Automatické přepínání každých 4 sekundy
+        autoPlayInterval = setInterval(nextSlide, 4000);
 
-        [prevButton, nextButton].forEach((button, index) => {
-            button.addEventListener('click', () => {
-                clearInterval(autoPlayInterval);
-                index === 0 ? prevSlide() : nextSlide();
-                autoPlayInterval = setInterval(nextSlide, 3000);
-            });
+        prevButton.addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            prevSlide();
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        });
+
+        nextButton.addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            nextSlide();
+            autoPlayInterval = setInterval(nextSlide, 4000);
         });
     }
 
-    // Hamburger menu
+    // Hamburger menu pro mobily
     const hamburger = document.getElementById('hamburger');
     const menu = document.querySelector('.menu');
     if (hamburger && menu) {
-        const toggleMenu = () => {
-    hamburger.classList.toggle('active');
-    menu.classList.toggle('active');
-};
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+    }
 
-hamburger.addEventListener('click', toggleMenu);
-hamburger.addEventListener('touchstart', toggleMenu);
-}
-
-    // Dropdown menu for mobile
+    // Rozklikávací menu (Nabídka) na mobilech
     document.querySelectorAll('.menu > li').forEach(menuItem => {
-        menuItem.addEventListener('click', () => {
-            menuItem.classList.toggle('clicked');
-        });
-    });
-
-    // Toggle hidden text
-    document.querySelectorAll(".toggle-button").forEach(button => {
-        button.addEventListener("click", function () {
-            const hiddenText = this.nextElementSibling;
-            if (hiddenText) {
-                hiddenText.classList.toggle("active");
-                this.textContent = hiddenText.classList.contains("active") ? "ZOBRAZIT MÉNĚ" : "ZJISTI VÍCE";
-            }
-        });
+        const dropdownToggle = menuItem.querySelector('a');
+        const dropdown = menuItem.querySelector('.dropdown');
+        
+        if (dropdown) {
+            dropdownToggle.addEventListener('click', (e) => {
+                // Na mobilu zabráníme okamžitému prokliku, pokud má rozbalovací podmenu
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    menuItem.classList.toggle('clicked');
+                }
+            });
+        }
     });
 });
 
+// Funkce pro rozbalení / skrytí textu v sekci "O nás"
 function toggleText() {
     var textElements = document.querySelectorAll('.hidden-text');
+    var button = document.querySelector('.btn-show-more');
+    
     textElements.forEach(function(element) {
-        if (element.style.display === "none") {
+        if (element.style.display === "none" || element.style.display === "") {
             element.style.display = "block";
+            if (button) button.innerHTML = "ZOBRAZIT MÉNĚ";
         } else {
             element.style.display = "none";
+            if (button) button.innerHTML = "ZJISTI VÍCE";
         }
     });
-
-    var button = document.querySelector('.btn-show-more');
-    if (button.innerHTML === "Zjisti více") {
-        button.innerHTML = "ZJISTI VÍCE / SKRÝT";
-    } else {
-        button.innerHTML = "ZJISTI VÍCE / SKRÝT";
-    }
 }
 
+// Validace kontaktního formuláře před odesláním
 const form = document.querySelector('.contact-form');
-
 if (form) {
     form.addEventListener('submit', function(event) {
-
         let isValid = true;
 
         const nameInput = document.getElementById('name');
-        if (nameInput.value.trim() === '') {
+        if (nameInput && nameInput.value.trim() === '') {
             isValid = false;
             alert('Prosím vyplňte jméno.');
             nameInput.focus();
+            event.preventDefault();
+            return;
         }
 
         const emailInput = document.getElementById('email');
-        if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        if (emailInput && (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value))) {
             isValid = false;
             alert('Prosím vyplňte platný e-mail.');
             emailInput.focus();
+            event.preventDefault();
+            return;
         }
 
         const messageInput = document.getElementById('message');
-        if (messageInput.value.trim() === '') {
+        if (messageInput && messageInput.value.trim() === '') {
             isValid = false;
             alert('Prosím vyplňte zprávu.');
             messageInput.focus();
-        }
-
-        if (!isValid) {
             event.preventDefault();
+            return;
         }
-
     });
 }
