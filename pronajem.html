@@ -1,104 +1,97 @@
 <!DOCTYPE html>
 <html lang="cs">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přihlášky - ODADOZ</title>
+    <title>Půjčte si - ODADOZ</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/Script.js" defer></script>
+    <script src="js/script.js" defer></script>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-
 <body>
-    <!-- Navigace -->
-    <header>
-        <nav class="nav-grid">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo"></a>
-            </div>
-            <div class="nav-menu">
-                <div id="hamburger" class="hamburger">&#9776;</div>
-                <ul id="menu" class="menu">
-                    <li><a href="index.html#nabidka" class="nav-dropdown-toggle">NABÍDKA &#9662;</a>
-                        <ul class="dropdown">
-                            <li><a href="index.html#pripravka-1">Sportovní přípravka I</a></li>
-                            <li><a href="index.html#pripravka-2">Sportovní přípravka II</a></li>
-                            <li><a href="index.html#pripravka-3">Sportovní přípravka III</a></li>
-                            <li><a href="index.html#mazoretky">Mažoretky</a></li>
-                            <li><a href="index.html#karate">Karate</a></li>
-                            <li><a href="index.html#cviceni-pro-dospelych">Cvičení pro dospělé</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="index.html#about-us">O NÁS</a></li>
-                    <li><a href="pronajem.html">EXTRA SLUŽBY</a></li>
-                    <li><a href="prihlasky.html">PŘIHLÁŠKY</a></li>
-                    <li><a href="#contact">KONTAKT</a></li>
-                </ul>
-            </div>
-        </nav>
 
-        <div class="header">
-            <div class="header-content">
-                <h1></h1>
-                <h1>PŘIHLÁŠKY</h1>
-                <div class="center-container">
-                    <a href="index.html" class="center-button">ÚVODNÍ STRÁNKA</a>
-                </div>    
-            </div>
+    <!-- Navigace -->
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo"></a>
+        </div>
+        <div class="nav-menu">
+            <div id="hamburger">&#9776;</div>
+            <ul class="menu">
+                <li><a href="nabidka.html">NABÍDKA &#9662;</a>
+                    <ul class="dropdown">
+                        <li><a href="pripravka.html">VŠESTRANNÁ POHYBOVÁ PŘÍPRAVA</a></li>
+                        <li><a href="#">VŠESTRANNÁ POHYBOVKA POKROČILÍ</a></li>
+                        <li><a href="#">BUĎ FIT - CVIČENÍ PRO DOSPĚLÉ</a></li>
+                    </ul>
+                </li>
+                <li><a href="aktuality.html">AKTUALITY</a></li>
+                <li><a href="o-nas.html">O NÁS</a></li>
+                <li><a href="#contact">KONTAKT</a></li>
+                <li><a href="dokumenty.html">DOKUMENTY</a></li>
+                <li><a href="pronajem.html">PŮJČTE SI</a></li>
+                <li><a href="prihlasky.html">PŘIHLÁŠKY</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="header-hero">
+        <div class="header-content">
+            <h1>PŮJČTE SI</h1>
+            <p class="hero-subtitle">Vyberte si z naší nabídky nafukovacích hradů a vybavení</p>
         </div>
     </header>
 
-
-    <main>
-        <section class="section">
-            <div style="max-width: 1000px; margin: 0 auto; padding: 20px; text-align: center;">
-                <h2>Vyberte si to pravé pro vás:</h2>
-                <p>Kliknutím na plakát nebo tlačítko přejdete přímo na online přihlášku.</p>
-                
-                <!-- Kontejner pro plakáty / karty přihlášek -->
-                <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 40px;">
-                    
-                    <!-- 1. Karta: Zájmové útvary (Externí formulář - otevírá nové okno) -->
-                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
-                        <a href="https://docs.google.com/forms/d/1PpM57yftFzMVXr1pL_T2Dz3hNfKbpRG7g_Lrh-qRiAA/edit" target="_blank">
-                            <img src="images/krouzky.jpg" alt="Plakát Zájmové útvary" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
-                        </a>
-                        <h3 style="margin: 15px 0 10px;">Zájmové útvary</h3>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Přihlášení do našich kroužků a pohybových aktivit.</p>
-                        <a href="https://docs.google.com/forms/d/1PpM57yftFzMVXr1pL_T2Dz3hNfKbpRG7g_Lrh-qRiAA/edit" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Vyplnit přihlášku</a>
+    <!-- Sekce produktů / pronájmu -->
+    <section>
+        <div class="shop-wrapper" style="max-width: 1100px; margin: 0 auto;">
+            <div class="trainers-grid"> <!-- Využívá stejný moderní grid jako trenéři pro čistý vzhled karet -->
+                <div class="trainer-profile">
+                    <div class="image-frame" style="width: 100%; height: 220px; border-radius: 12px;">
+                        <img src="images/smallcastle.jpg" alt="Malá pevnost" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-
-                    <!-- 2. Karta: Letní příměstské tábory (Externí formulář - otevírá nové okno) -->
-                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
-                        <a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank">
-                            <img src="images/tabory.jpg" alt="Plakát Letní příměstské tábory" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
-                        </a>
-                        <h3 style="margin: 15px 0 10px;">Letní příměstské tábory</h3>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Místo plné zábavy, her a pohybu o prázdninách.</p>
-                        <a href="https://docs.google.com/forms/d/1FvI_uYw4dIrJ4HhNa1x6xmPXDn7zcGB9ljuYXdKiRPk/edit?usp=forms_home" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Vyplnit přihlášku</a>
+                    <div class="trainer-description" style="margin-top: 20px;">
+                        <h3>Malá pevnost</h3>
+                        <p class="price" style="font-size: 1.3rem; font-weight: bold; color: #ff5722; margin: 10px 0 20px 0;">3 000 Kč (základní cena)</p>
+                        <a href="#contact" class="center-button" style="padding: 10px 25px; font-size: 0.95rem;">Objednat</a>
                     </div>
+                </div>
 
-                    <!-- 3. Karta: Závod Hradišťan (Externí web - otevírá nové okno) -->
-                    <div style="flex: 1; min-width: 280px; max-width: 300px; border: 1px solid #ddd; border-radius: 8px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff;">
-                        <a href="https://www.zavod-hradistan.cz/" target="_blank">
-                            <img src="images/hradistan.jpg" alt="Plakát Závod Hradišťan" style="width: 100%; height: auto; border-radius: 5px; object-fit: cover;">
-                        </a>
-                        <h3 style="margin: 15px 0 10px;">Závod Hradišťan</h3>
-                        <p style="font-size: 14px; color: #666; margin-bottom: 15px;">Tradiční závod. Více informací a registrace.</p>
-                        <a href="https://www.zavod-hradistan.cz/" target="_blank" class="center-button" style="display: inline-block; padding: 10px 20px; text-decoration: none;">Přejít na web závodu</a>
+                <div class="trainer-profile">
+                    <div class="image-frame" style="width: 100%; height: 220px; border-radius: 12px;">
+                        <img src="images/bigcastle.jpg" alt="Turbo skluzavka" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
                     </div>
-
+                    <div class="trainer-description" style="margin-top: 20px;">
+                        <h3>Turbo skluzavka</h3>
+                        <p class="price" style="font-size: 1.3rem; font-weight: bold; color: #ff5722; margin: 10px 0 20px 0;">4 500 Kč (základní cena)</p>
+                        <a href="#contact" class="center-button" style="padding: 10px 25px; font-size: 0.95rem;">Objednat</a>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Kontakt -->
+    <!-- Sekce Podporují nás -->
+    <section class="sponsors-section">
+        <div class="trainers-container">
+            <h2>PODPORUJÍ NÁS</h2>
+            <div class="sponsor-logos">
+                <a href="#" target="_blank"><img src="images/kubensky.jpg" alt="Kuběnský"></a>
+                <a href="#" target="_blank"><img src="images/konopnytata.png" alt="Konopný táta"></a>
+                <a href="#" target="_blank"><img src="images/aga.png" alt="Aga"></a>
+                <a href="#" target="_blank"><img src="images/acsteel.png" alt="AC Steel"></a>
+                <a href="#" target="_blank"><img src="images/terlicko.png" alt="Těrlicko"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktní sekce -->
     <section id="contact">
         <div class="contact-container">
             <h2>KONTAKT</h2>
-            <div class="contact-grid">
+            
+            <div class="contact-info-grid">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <img src="images/tel.png" alt="Telefon">
@@ -112,47 +105,49 @@
                     <p><a href="mailto:ODADOZ@OUTLOOK.CZ">ODADOZ@OUTLOOK.CZ</a></p>
                 </div>
             </div>
-            <div class="ico">
-                <center><p>IČO: 21618101</p></center>
+
+            <div class="ico-box">
+                <p>IČO: 21618101</p>
             </div>
-            
-            <h2>PŘIDEJ SE K NÁM!</h2>
-            <div class="center-container">
+
+            <h2 style="font-size: 1.5rem; margin-top: 30px;">PŘIDEJ SE K NÁM!</h2>
+            <div class="center-container" style="margin-bottom: 40px;">
                 <a href="prihlasky.html" class="center-button">PŘIHLÁŠKY</a>
             </div>
 
-            <h2>Kontaktujte nás</h2>
-            <h2>A NEBO NÁM NAPIŠTE ROVNOU TADY :)</h2>
-            
-            <form action="https://formspree.io/f/xanqweae" method="post" class="contact-form">
-                <label for="name">Jméno a Příjmení:</label>
-                <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+            <div class="form-wrapper">
+                <h3>Napište nám rovno tady :)</h3>
+                <form action="https://formspree.io/f/xanqweae" method="post" class="contact-form">
+                    <label for="name">Jméno a Příjmení:</label>
+                    <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="Váš e-mail" required>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Váš e-mail" required>
 
-                <label for="phone">Telefon:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
+                    <label for="phone">Telefon:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Váš telefon" required>
 
-                <label for="message">Zpráva:</label>
-                <textarea id="message" name="message" placeholder="Vaše zpráva: Dobrý den, rád bych poprosil o zaslání přihlášky, pro všestrannou pohybovou přípravku. Díky s pozdravem Novotný." required></textarea>
+                    <label for="message">Zpráva:</label>
+                    <textarea id="message" name="message" placeholder="Vaše zpráva (např. zájem o pronájem...)" required></textarea>
 
-                <button type="submit" class="btn-submit">Odeslat</button>
-            </form>
+                    <button type="submit" class="btn-submit">Odeslat</button>
+                </form>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <a href="index.html"><img src="images/logo.png" alt="ODADOZ Logo" class="footer-logo"></a>
+            <img src="images/logo.png" alt="ODADOZ Logo" class="footer-logo">
             <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=61558994196985" target="_blank"><img src="images/facebook.png.png" alt="Facebook"></a>
                 <a href="https://www.youtube.com/@odadoz_cz" target="_blank"><img src="images/youtube.png" alt="YouTube"></a>
-                <a href="https://www.instagram.com/odadoz_cz/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+                <a href="https://www.instagram.com/odadoz_cz/profilecard/?igsh=NzBqcmVxbTBtcHk0" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
             </div>
-            <p>&copy; 2026 ODADOZ z.s. Všechna práva vyhrazena.</p>
+            <p>&copy; 2026 ODADOZ. All rights reserved.</p>
         </div>
     </footer>
-</body>
 
+</body>
 </html>
